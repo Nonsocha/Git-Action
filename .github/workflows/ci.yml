@@ -1,8 +1,12 @@
-name: Simple Test Workflow
+name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:

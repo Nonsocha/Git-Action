@@ -21,8 +21,15 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Change directory to my-app
+        run: cd my-app
+
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd my-app
+          npm install
 
       - name: Run tests
-        run: npm test
+        run: |
+          cd my-app
+          npm test

@@ -18,6 +18,8 @@
   "bugs": {
     "url": "https://github.com/Nonsocha/Git-Action/issues"
   },
-  "homepage": "https://github.com/Nonsocha/Git-Action#readme"
+  "homepage": "https://github.com/Nonsocha/Git-Action#readme",
+  "dependencies": {
+    "express": "^2.5.11"
+  }
 }
-

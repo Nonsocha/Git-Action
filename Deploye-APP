@@ -1,0 +1,33 @@
+name: Deploy to AWS EC2
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment on pushes to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3  # Check out your code
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'  # Specify your Node.js version
+
+    - name: Install dependencies
+      run: npm install  # Install your project dependencies
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v2
+      with:
+        aws-access-key-id: ${{ AKIATBRPP6FCR5NH2CE4}}
+        aws-secret-access-key: ${{ UdP23Y9qtuKiG6r9Mr1G0gUUnr1lWWKEF/oOZdQ5 }}
+        aws-region: us-east-1  # Set your AWS region
+
+    - name: Deploy to EC2
+      run: |
+        aws ec2 describe-instances  # Example AWS CLI command, replace with your deployment process
